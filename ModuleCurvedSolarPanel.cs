@@ -107,7 +107,12 @@ namespace NearFutureSolar
                     }
                     
                 }
-                EnergyFlow = String.Format("{0:F2}", energyFlow);
+                
+                double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
+                float realFlow = powerCurve.Evaluate((float)altAboveSun)*energyFlow;
+                Debug.Log(altAboveSun.ToString() +", gives " + realFlow);
+
+                EnergyFlow = String.Format("{0:F2}", realFlow);
                 SunExposure = String.Format("{0:F2}", sunExposure);
 
                 if (blockedPartCount >= panelCount)
@@ -119,7 +124,7 @@ namespace NearFutureSolar
                     SunExposure = "Blocked by " + body + "!";
                 }
 
-                part.RequestResource(ResourceName, -energyFlow);
+                part.RequestResource(ResourceName,  (-realFlow)*TimeWarp.fixedDeltaTime);
             }
         }
 
@@ -157,16 +162,20 @@ namespace NearFutureSolar
 
             angle = Vector3.Angle(refXForm.forward, sun.transform.position-refXForm.position);
 
-            Vector3d vT = sun.position - part.vessel.GetWorldPos3D();
-            Vector3d vC = currentBody.position - part.vessel.GetWorldPos3D();
-            // if true, behind horizon plane
-            if (Vector3d.Dot(vT, vC) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
+            if (currentBody != sun)
             {
-                // if true, obscured
-                if ((Mathf.Pow(Vector3.Dot(vT, vC), 2) / vT.sqrMagnitude) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
+
+                Vector3d vT = sun.position - part.vessel.GetWorldPos3D();
+                Vector3d vC = currentBody.position - part.vessel.GetWorldPos3D();
+                // if true, behind horizon plane
+                if (Vector3d.Dot(vT, vC) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
                 {
-                    sunVisible = false;
-                    obscuringBody = currentBody.name;
+                    // if true, obscured
+                    if ((Mathf.Pow(Vector3.Dot(vT, vC), 2) / vT.sqrMagnitude) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
+                    {
+                        sunVisible = false;
+                        obscuringBody = currentBody.name;
+                    }
                 }
             }
 
