@@ -16,7 +16,7 @@ namespace NearFutureSolar
         public float TotalEnergyRate = 5.0f;
 
         [KSPField(isPersistant = false)]
-        public FloatCurve powerCurve;
+        public FloatCurve powerCurve = new FloatCurve();
 
         [KSPField(isPersistant = false)]
         public string ResourceName;
