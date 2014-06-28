@@ -13,6 +13,12 @@ namespace NearFutureSolar
         public string PanelTransformName;
 
         [KSPField(isPersistant = false)]
+        public string DeployAnimation;
+
+        [KSPField(isPersistant = false)]
+        public bool Deployable = false;
+
+        [KSPField(isPersistant = false)]
         public float TotalEnergyRate = 5.0f;
 
         [KSPField(isPersistant = false)]
@@ -29,6 +35,106 @@ namespace NearFutureSolar
 
         public float energyFlow;
         public float sunExposure;
+
+        // ACTIONS
+        // -----------------
+        // Deploy Panels
+        [KSPEvent(guiActive = true, guiName = "Deploy Panel", active = true)]
+        public void DeployRadiator()
+        {
+            Deploy();
+
+        }
+        // Retract Panels
+        [KSPEvent(guiActive = true, guiName = "Retract Panel", active = false)]
+        public void RetractRadiator()
+        {
+            Retract();
+
+        }
+        // Toggle Panels
+        [KSPEvent(guiActive = true, guiName = "Toggle Panel", active = true)]
+        public void ToggleRadiator()
+        {
+
+            Toggle();
+        }
+
+        [KSPAction("Deploy Panels")]
+        public void DeployPanelsAction(KSPActionParam param)
+        {
+            DeployRadiator();
+        }
+
+        [KSPAction("Retract Panels")]
+        public void RetractPanelsAction(KSPActionParam param)
+        {
+            RetractRadiator();
+        }
+
+        [KSPAction("Toggle Panels")]
+        public void TogglePanelsAction(KSPActionParam param)
+        {
+            ToggleRadiator();
+        }
+
+        // Deploy Panels
+        public void Deploy()
+        {
+            foreach (AnimationState deployState in deployStates)
+            {
+                deployState.speed = 1;
+            }
+            State = ModuleDeployableSolarPanel.panelStates.EXTENDING;
+        }
+
+        // Retract Panels
+        public void Retract()
+        {
+            foreach (AnimationState deployState in deployStates)
+            {
+                deployState.speed = -1;
+            }
+            State = ModuleDeployableSolarPanel.panelStates.RETRACTING;
+        }
+        // Toggle Radiators
+        public void Toggle()
+        {
+            if (State == ModuleDeployableSolarPanel.panelStates.EXTENDED)
+                Retract();
+            else if (State == ModuleDeployableSolarPanel.panelStates.RETRACTED)
+                Deploy();
+            else
+                return;
+        }
+
+        // Get the state
+        public ModuleDeployableSolarPanel.panelStates State
+        {
+            get
+            {
+                try
+                {
+                    return (ModuleDeployableSolarPanel.panelStates)Enum.Parse(typeof(ModuleDeployableSolarPanel.panelStates), SavedState);
+                }
+                catch
+                {
+                    State = ModuleDeployableSolarPanel.panelStates.RETRACTED;
+                    return State;
+                }
+            }
+            set
+            {
+                SavedState = value.ToString();
+            }
+        }
+
+        // Current panel state
+        [KSPField(isPersistant = true)]
+        public string SavedState;
+
+
+        private AnimationState[] deployStates;
 
         private Transform[] panelTransforms;
         private int panelCount= 0;
@@ -57,6 +163,31 @@ namespace NearFutureSolar
             panelCount = panelTransforms.Length;
             chargePerTransform = TotalEnergyRate / panelCount;
 
+            if (Deployable)
+            {
+                deployStates = Utils.SetUpAnimation(DeployAnimation, this.part);
+
+
+                if (State == ModuleDeployableSolarPanel.panelStates.EXTENDED || State == ModuleDeployableSolarPanel.panelStates.EXTENDING)
+                {
+                    foreach (AnimationState deployState in deployStates)
+                    {
+                        deployState.normalizedTime = 1f;
+                    }
+                }
+                else if (State == ModuleDeployableSolarPanel.panelStates.RETRACTED || State == ModuleDeployableSolarPanel.panelStates.RETRACTING)
+                {
+                    foreach (AnimationState deployState in deployStates)
+                    {
+                        deployState.normalizedTime = 0f;
+                    }
+                }
+                else
+                {
+                    // broken! none for you!
+                }
+            }
+
             if (state != StartState.Editor)
             {
                 sunTransform = FlightGlobals.Bodies[0].bodyTransform;
@@ -72,59 +203,87 @@ namespace NearFutureSolar
         {
             if (flight)
             {
-                sunExposure = 0f;
-                energyFlow = 0f;
-
-                int blockedPartCount = 0;
-                int blockedBodyCount = 0;
-                string body = "";
-                string obscuringPart = "";
-
-                foreach (Transform panel in panelTransforms)
+                if (!Deployable || (Deployable && (State == ModuleDeployableSolarPanel.panelStates.EXTENDED )))
                 {
-                    float angle = 0f;
+                    sunExposure = 0f;
+                    energyFlow = 0f;
 
-                    if (SolarLOS(panel, out angle,out body))
+                    int blockedPartCount = 0;
+                    int blockedBodyCount = 0;
+                    string body = "";
+                    string obscuringPart = "";
+
+                    foreach (Transform panel in panelTransforms)
                     {
-                        if (PartLOS(panel, out obscuringPart))
+                        float angle = 0f;
+
+                        if (SolarLOS(panel, out angle, out body))
                         {
-                            sunExposure += Mathf.Clamp01(Mathf.Cos(angle*Mathf.Deg2Rad)) / panelCount;
-                            energyFlow += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) * chargePerTransform;
+                            if (PartLOS(panel, out obscuringPart))
+                            {
+                                sunExposure += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) / panelCount;
+                                energyFlow += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) * chargePerTransform;
+                            }
+                            else
+                            {
+                                energyFlow += 0f;
+                                sunExposure += 0f;
+                                blockedPartCount++;
+                            }
                         }
                         else
                         {
-                            energyFlow += 0f;
                             sunExposure += 0f;
-                            blockedPartCount++;
+                            energyFlow += 0f;
+                            blockedBodyCount++;
+
                         }
+
                     }
-                    else
+
+                    double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
+                    float realFlow = powerCurve.Evaluate((float)altAboveSun) * energyFlow;
+                    Debug.Log(altAboveSun.ToString() + ", gives " + realFlow);
+
+                    EnergyFlow = String.Format("{0:F2}", realFlow);
+                    SunExposure = String.Format("{0:F2}", sunExposure);
+
+                    if (blockedPartCount >= panelCount)
                     {
-                        sunExposure += 0f;
-                        energyFlow += 0f;
-                        blockedBodyCount++;
-                        
+                        SunExposure = "Blocked by " + obscuringPart + "!";
                     }
-                    
-                }
-                
-                double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
-                float realFlow = powerCurve.Evaluate((float)altAboveSun)*energyFlow;
-                Debug.Log(altAboveSun.ToString() +", gives " + realFlow);
+                    if (blockedBodyCount >= panelCount)
+                    {
+                        SunExposure = "Blocked by " + body + "!";
+                    }
 
-                EnergyFlow = String.Format("{0:F2}", realFlow);
-                SunExposure = String.Format("{0:F2}", sunExposure);
-
-                if (blockedPartCount >= panelCount)
-                {
-                    SunExposure = "Blocked by " + obscuringPart + "!";
+                    part.RequestResource(ResourceName, (-realFlow) * TimeWarp.fixedDeltaTime);
                 }
-                if (blockedBodyCount >= panelCount)
-                {
-                    SunExposure = "Blocked by " + body + "!";
-                }
+            }
+        }
 
-                part.RequestResource(ResourceName,  (-realFlow)*TimeWarp.fixedDeltaTime);
+        public override void OnUpdate()
+        {
+            foreach (AnimationState deployState in deployStates)
+            {
+                deployState.normalizedTime = Mathf.Clamp01(deployState.normalizedTime);
+            }
+            if (State == ModuleDeployableSolarPanel.panelStates.RETRACTING)
+            {
+                if (EvalAnimationCompletionReversed(deployStates) == 0f)
+                    State = ModuleDeployableSolarPanel.panelStates.RETRACTED;
+            }
+
+            if (State == ModuleDeployableSolarPanel.panelStates.EXTENDING)
+            {
+                if (EvalAnimationCompletion(deployStates) == 1f)
+                    State = ModuleDeployableSolarPanel.panelStates.EXTENDED;
+            }
+
+            if ((State == ModuleDeployableSolarPanel.panelStates.EXTENDED && Events["DeployRadiator"].active) || (State == ModuleDeployableSolarPanel.panelStates.RETRACTED && Events["RetractPanels"].active))
+            {
+                Events["DeployPanels"].active = !Events["DeployPanels"].active;
+                Events["RetractPanels"].active = !Events["RetractPanels"].active;
             }
         }
 
@@ -209,5 +368,26 @@ namespace NearFutureSolar
 
             
         }
+
+
+        private float EvalAnimationCompletion(AnimationState[] states)
+        {
+            float checker = 0f;
+            foreach (AnimationState state in states)
+            {
+                checker = Mathf.Max(state.normalizedTime, checker);
+            }
+            return checker;
+        }
+        private float EvalAnimationCompletionReversed(AnimationState[] states)
+        {
+            float checker = 1f;
+            foreach (AnimationState state in states)
+            {
+                checker = Mathf.Min(state.normalizedTime, checker);
+            }
+            return checker;
+        }
+    
     }
 }
