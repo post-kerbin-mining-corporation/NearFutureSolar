@@ -40,21 +40,21 @@ namespace NearFutureSolar
         // -----------------
         // Deploy Panels
         [KSPEvent(guiActive = true, guiName = "Deploy Panel", active = true)]
-        public void DeployRadiator()
+        public void DeployPanels()
         {
             Deploy();
 
         }
         // Retract Panels
         [KSPEvent(guiActive = true, guiName = "Retract Panel", active = false)]
-        public void RetractRadiator()
+        public void RetractPanels()
         {
             Retract();
 
         }
         // Toggle Panels
         [KSPEvent(guiActive = true, guiName = "Toggle Panel", active = true)]
-        public void ToggleRadiator()
+        public void TogglePanels()
         {
 
             Toggle();
@@ -63,19 +63,19 @@ namespace NearFutureSolar
         [KSPAction("Deploy Panels")]
         public void DeployPanelsAction(KSPActionParam param)
         {
-            DeployRadiator();
+            DeployPanels();
         }
 
         [KSPAction("Retract Panels")]
         public void RetractPanelsAction(KSPActionParam param)
         {
-            RetractRadiator();
+            RetractPanels();
         }
 
         [KSPAction("Toggle Panels")]
         public void TogglePanelsAction(KSPActionParam param)
         {
-            ToggleRadiator();
+            TogglePanels();
         }
 
         // Deploy Panels
