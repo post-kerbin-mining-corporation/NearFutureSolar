@@ -280,7 +280,7 @@ namespace NearFutureSolar
                     State = ModuleDeployableSolarPanel.panelStates.EXTENDED;
             }
 
-            if ((State == ModuleDeployableSolarPanel.panelStates.EXTENDED && Events["DeployRadiator"].active) || (State == ModuleDeployableSolarPanel.panelStates.RETRACTED && Events["RetractPanels"].active))
+            if ((State == ModuleDeployableSolarPanel.panelStates.EXTENDED && Events["DeployPanels"].active) || (State == ModuleDeployableSolarPanel.panelStates.RETRACTED && Events["RetractPanels"].active))
             {
                 Events["DeployPanels"].active = !Events["DeployPanels"].active;
                 Events["RetractPanels"].active = !Events["RetractPanels"].active;
