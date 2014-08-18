@@ -243,7 +243,7 @@ namespace NearFutureSolar
 
                     double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
                     float realFlow = powerCurve.Evaluate((float)altAboveSun) * energyFlow;
-                    Debug.Log(altAboveSun.ToString() + ", gives " + realFlow);
+                    //Debug.Log(altAboveSun.ToString() + ", gives " + realFlow);
 
                     EnergyFlow = String.Format("{0:F2}", realFlow);
                     SunExposure = String.Format("{0:F2}", sunExposure);
@@ -264,26 +264,30 @@ namespace NearFutureSolar
 
         public override void OnUpdate()
         {
-            foreach (AnimationState deployState in deployStates)
+            
+            if (Deployable)
             {
-                deployState.normalizedTime = Mathf.Clamp01(deployState.normalizedTime);
-            }
-            if (State == ModuleDeployableSolarPanel.panelStates.RETRACTING)
-            {
-                if (EvalAnimationCompletionReversed(deployStates) == 0f)
-                    State = ModuleDeployableSolarPanel.panelStates.RETRACTED;
-            }
+                foreach (AnimationState deployState in deployStates)
+                {
+                    deployState.normalizedTime = Mathf.Clamp01(deployState.normalizedTime);
+                }
+                if (State == ModuleDeployableSolarPanel.panelStates.RETRACTING)
+                {
+                    if (EvalAnimationCompletionReversed(deployStates) == 0f)
+                        State = ModuleDeployableSolarPanel.panelStates.RETRACTED;
+                }
 
-            if (State == ModuleDeployableSolarPanel.panelStates.EXTENDING)
-            {
-                if (EvalAnimationCompletion(deployStates) == 1f)
-                    State = ModuleDeployableSolarPanel.panelStates.EXTENDED;
-            }
+                if (State == ModuleDeployableSolarPanel.panelStates.EXTENDING)
+                {
+                    if (EvalAnimationCompletion(deployStates) == 1f)
+                        State = ModuleDeployableSolarPanel.panelStates.EXTENDED;
+                }
 
-            if ((State == ModuleDeployableSolarPanel.panelStates.EXTENDED && Events["DeployPanels"].active) || (State == ModuleDeployableSolarPanel.panelStates.RETRACTED && Events["RetractPanels"].active))
-            {
-                Events["DeployPanels"].active = !Events["DeployPanels"].active;
-                Events["RetractPanels"].active = !Events["RetractPanels"].active;
+                if ((State == ModuleDeployableSolarPanel.panelStates.EXTENDED && Events["DeployPanels"].active) || (State == ModuleDeployableSolarPanel.panelStates.RETRACTED && Events["RetractPanels"].active))
+                {
+                    Events["DeployPanels"].active = !Events["DeployPanels"].active;
+                    Events["RetractPanels"].active = !Events["RetractPanels"].active;
+                }
             }
         }
 
