@@ -187,6 +187,12 @@ namespace NearFutureSolar
                     // broken! none for you!
                 }
             }
+            else
+            {
+                Events["DeployPanels"].active = false;
+                Events["RetractPanels"].active = false;
+                Events["TogglePanels"].active = false;
+            }
 
             if (state != StartState.Editor)
             {
