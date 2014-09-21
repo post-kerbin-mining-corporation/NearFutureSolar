@@ -97,7 +97,7 @@ namespace NearFutureSolar
             }
             State = ModuleDeployableSolarPanel.panelStates.RETRACTING;
         }
-        // Toggle Radiators
+        // Toggle Panels
         public void Toggle()
         {
             if (State == ModuleDeployableSolarPanel.panelStates.EXTENDED)
