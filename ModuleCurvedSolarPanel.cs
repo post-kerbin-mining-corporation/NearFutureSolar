@@ -81,6 +81,9 @@ namespace NearFutureSolar
         // Deploy Panels
         public void Deploy()
         {
+            if (!Deployable)
+                return;
+
             foreach (AnimationState deployState in deployStates)
             {
                 deployState.speed = 1;
@@ -91,13 +94,16 @@ namespace NearFutureSolar
         // Retract Panels
         public void Retract()
         {
+            if (!Deployable)
+                return;
+
             foreach (AnimationState deployState in deployStates)
             {
                 deployState.speed = -1;
             }
             State = ModuleDeployableSolarPanel.panelStates.RETRACTING;
         }
-        // Toggle Radiators
+        // Toggle Panels
         public void Toggle()
         {
             if (State == ModuleDeployableSolarPanel.panelStates.EXTENDED)
@@ -186,6 +192,12 @@ namespace NearFutureSolar
                 {
                     // broken! none for you!
                 }
+            }
+            else
+            {
+                Events["DeployPanels"].active = false;
+                Events["RetractPanels"].active = false;
+                Events["TogglePanels"].active = false;
             }
 
             if (state != StartState.Editor)
