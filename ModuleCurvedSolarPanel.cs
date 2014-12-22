@@ -165,6 +165,7 @@ namespace NearFutureSolar
 
         public override void OnStart(PartModule.StartState state)
         {
+            
             panelTransforms = part.FindModelTransforms(PanelTransformName);
             panelCount = panelTransforms.Length;
             chargePerTransform = TotalEnergyRate / panelCount;

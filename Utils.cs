@@ -11,6 +11,7 @@ namespace NearFutureSolar
     internal static class Utils
     {
 
+        public static string iconPath = "GameData/NearFutureSolar/Icons/";
 
         // This function loads up some animationstates
         public static AnimationState[] SetUpAnimation(string animationName, Part part)
