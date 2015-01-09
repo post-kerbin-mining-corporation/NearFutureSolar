@@ -17,16 +17,22 @@ namespace NearFutureSolar
         {
             // Load the icon
             Texture2D normal = new Texture2D(32, 32);
-            Texture2D selected = new Texture2D(32, 32); 
+            Texture2D selected = new Texture2D(32, 32);
+            try
+            {
+                normal.LoadImage(File.ReadAllBytes(Utils.iconPath + "curvedSolarFilter.png"));
+                selected.LoadImage(File.ReadAllBytes(Utils.iconPath + "curvedSolarFilter_selected.png"));
 
-            normal.LoadImage(File.ReadAllBytes(Utils.iconPath + "curvedSolarFilter.png"));
-            selected.LoadImage(File.ReadAllBytes(Utils.iconPath + "curvedSolarFilter_selected.png"));
+                PartCategorizer.Icon icon = new PartCategorizer.Icon("CurvedSolarPanel", normal, selected);
 
-            PartCategorizer.Icon icon = new PartCategorizer.Icon("CurvedSolarPanel", normal, selected);
-
-            //Set the button
-            List<PartCategorizer.Category> modules = PartCategorizer.Instance.filters.Find(f => f.button.categoryName == "Filter by Module").subcategories;
-            modules.Select(m => m.button).Single(b => b.categoryName == "Curved  Solar  Panel").SetIcon(icon);;
+                //Set the button
+                List<PartCategorizer.Category> modules = PartCategorizer.Instance.filters.Find(f => f.button.categoryName == "Filter by Module").subcategories;
+                modules.Select(m => m.button).Single(b => b.categoryName == "Curved  Solar  Panel").SetIcon(icon);
+            }
+            catch
+            {
+                Debug.Log("[NF Solar] Critical error encountered setting icon for CurvedSolarPanel module filter");
+            }
         }
      
         private void Awake()
