@@ -11,8 +11,7 @@ namespace NearFutureSolar
     internal static class Utils
     {
 
-        public static string iconPath = "GameData/NearFutureSolar/Icons/";
-
+       
         // This function loads up some animationstates
         public static AnimationState[] SetUpAnimation(string animationName, Part part)
         {
@@ -34,7 +33,10 @@ namespace NearFutureSolar
         // Returns true if ship is it atmoshpere
         public static bool VesselInAtmosphere(Vessel vessel)
         {
-            return vessel.heightFromSurface < vessel.mainBody.maxAtmosphereAltitude;
+            if (vessel.atmDensity > 0d)
+                return true;
+            else
+                return false;
         }
 
 
