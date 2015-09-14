@@ -1,0 +1,93 @@
+v0.5.3
+------
+- Fixed a part name and CTT patch typo
+
+v0.5.2
+------
+- Fixed missing mipmaps for many textures
+- Fixed Megalador's maxTemp being 3100 (now 1200)
+
+v0.5.1
+------
+- CTT 2.0 support
+- Fixed Solo solar array's incorrect model reference
+- Fixed a couple of decriptions to mention retractability of panel
+
+v0.5.0
+------
+- Updated to KSP 1.0
+- Converted all textures to DDS
+- Adjusted solar panel mass/charge rates to better match new stock values
+- Curved solar panels now produce power scaled by the IS law
+- Made several panels unretractable with appropriate mass savings
+- New folder structure and part names for clarity
+- Removed new filter category for curved solar panels
+- Decreased computational resource use for curved solar panels
+
+v0.4.0
+------
+- Updated to KSP version 0.90
+- Curved Solar Panels have a custom category in the Modules part filter
+- Fixed some inconsistent manufacturer names
+
+v0.3.1
+------
+- Added support for the Community Tech Tree
+
+v0.3.0
+------
+- Updated for KSP 0.25
+- Rebalanced research unlock costs for parts
+- Changed many part cfg file names (part names are unchanged)
+- Some fixes to ModuleCurvedSolarPanel courtesy of jgottula
+- Converted all textures to mbm for better memory usage
+
+v0.2.2
+------
+- Fixed an error that would cause non-deploying curved solar panels to spam the log with errors
+- Fixed curved solar panels sapmming the log with debug values
+
+v0.2.1
+------
+- Large rebalance of panel charge rates, masses and costs
+- Fixed an overly large collider on the SOL-A panel causing fluctuating power use
+- Fixed a problem with the attach nodes on the PX-STAT 1x4
+- Updated many panel descriptions
+- Fixed a bug in CurvedSolarPanel (Thanks Maeyanie)
+- Fixed the Solo solar panel's scale being 1.25x too large. 
+
+v0.2.0
+------
+- Updated for 0.24
+- Revised costs for panels
+
+v0.1.2
+-------
+- Fixed PX-STAT solar panels having incorrect sun transform direction
+- Changed NIV3 to 3.75m diameter (deprecated old NIV-e)
+- Added NIV-18 Curved solar array
+- Added SOL-A Deployable Curved Solar Array
+- Added YF-1 Circular Solar Array
+- Remodeled and reanimated OKEB-125 and OKEB-250 solar arrays for significantly less lag and improved performance
+- Tweaked several solar panel specular textures
+
+v0.1.1a
+-------
+- Fixed T65 and NIV3 charge rates being incorrect
+
+v0.1.1
+------
+- Added KR-SL Solo Solar Array
+- Added T65 1x5 Concentrating Photovoltaic Panels
+- Added T225 1x5 Concentrating Photovoltaic Panels
+- Added NIV-3 Curved Solar Array
+- Added IX-STAT 1x2 Photovoltaic Truss
+- Added IX-STAT 1x4 Photovoltaic Truss
+- Tweaked some models for performance
+- Another attempted fix for large panel orientation
+
+v0.1.0
+------
+- Split from main Near Future Pack
+- Added KR-ML Trio Solar Array
+- Introduced measures to stop large solar panels from getting stuck (works sometimes...)
