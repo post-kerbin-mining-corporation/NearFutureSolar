@@ -1,3 +1,8 @@
+v0.5.4
+------
+- KSP 1.05 repack
+- Added MiniAVC version checking
+
 v0.5.3
 ------
 - Fixed a part name and CTT patch typo
