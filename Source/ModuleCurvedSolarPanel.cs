@@ -39,14 +39,14 @@ namespace NearFutureSolar
         // ACTIONS
         // -----------------
         // Deploy Panels
-        [KSPEvent(guiActive = true, guiName = "Deploy Panel", active = true)]
+        [KSPEvent(guiActive = true, guiName = "Deploy Panel", active = true, guiActiveEditor = true)]
         public void DeployPanels()
         {
             Deploy();
 
         }
         // Retract Panels
-        [KSPEvent(guiActive = true, guiName = "Retract Panel", active = false)]
+        [KSPEvent(guiActive = true, guiName = "Retract Panel", active = false, guiActiveEditor = true)]
         public void RetractPanels()
         {
             Retract();
@@ -216,7 +216,7 @@ namespace NearFutureSolar
         {
             if (flight)
             {
-                if (!Deployable || (Deployable && (State == ModuleDeployableSolarPanel.panelStates.EXTENDED )))
+                if (!Deployable || (Deployable && (State == ModuleDeployableSolarPanel.panelStates.EXTENDED ) ))
                 {
                     sunExposure = 0f;
                     energyFlow = 0f;
@@ -271,6 +271,15 @@ namespace NearFutureSolar
                     }
 
                     part.RequestResource(ResourceName, (-realFlow) * TimeWarp.fixedDeltaTime);
+                } else if  (Deployable && (State == ModuleDeployableSolarPanel.panelStates.BROKEN ))
+                {
+                    SunExposure = "Broken!";
+                    EnergyFlow = "Panels Retracted";
+                }
+                else if (Deployable && (State == ModuleDeployableSolarPanel.panelStates.RETRACTED))
+                {
+                    SunExposure = "Panels Retracted";
+                    EnergyFlow = "Panels Retracted";
                 }
             }
         }
