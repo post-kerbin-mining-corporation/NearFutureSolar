@@ -53,7 +53,7 @@ namespace NearFutureSolar
 
         }
         // Toggle Panels
-        [KSPEvent(guiActive = true, guiName = "Toggle Panel", active = true)]
+        [KSPEvent(guiActive = false, guiName = "Toggle Panel", active = false)]
         public void TogglePanels()
         {
 
