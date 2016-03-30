@@ -1,3 +1,7 @@
+v0.6.0
+------
+- KSP 1.1 rebuild
+
 v0.5.5
 ------
 - Fixed deployable curved panels not updating their GUI fields when closed

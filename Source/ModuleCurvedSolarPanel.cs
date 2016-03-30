@@ -350,10 +350,10 @@ namespace NearFutureSolar
             if (currentBody != sun)
             {
 
-                Vector3d vT = sun.position - part.vessel.GetWorldPos3D();
-                Vector3d vC = currentBody.position - part.vessel.GetWorldPos3D();
+                Vector3 vT = sun.position - part.vessel.GetWorldPos3D();
+                Vector3 vC = currentBody.position - part.vessel.GetWorldPos3D();
                 // if true, behind horizon plane
-                if (Vector3d.Dot(vT, vC) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
+                if (Vector3.Dot(vT, vC) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
                 {
                     // if true, obscured
                     if ((Mathf.Pow(Vector3.Dot(vT, vC), 2) / vT.sqrMagnitude) > (vC.sqrMagnitude - currentBody.Radius * currentBody.Radius))
