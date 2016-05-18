@@ -284,7 +284,7 @@ namespace NearFutureSolar
             }
         }
 
-        public override void OnUpdate()
+        public void Update()
         {
             
             if (Deployable)
