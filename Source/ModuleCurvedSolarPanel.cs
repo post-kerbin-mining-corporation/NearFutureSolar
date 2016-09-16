@@ -33,7 +33,9 @@ namespace NearFutureSolar
         [KSPField(isPersistant = false, guiActive = true, guiName = "Energy Flow")]
         public string EnergyFlow;
 
+        [KSPField(isPersistant = false)]
         public float energyFlow;
+
         public float sunExposure;
 
         // ACTIONS
@@ -165,7 +167,7 @@ namespace NearFutureSolar
 
         public override void OnStart(PartModule.StartState state)
         {
-            
+
             panelTransforms = part.FindModelTransforms(PanelTransformName);
             panelCount = panelTransforms.Length;
             chargePerTransform = TotalEnergyRate / panelCount;
@@ -286,7 +288,7 @@ namespace NearFutureSolar
 
         public void Update()
         {
-            
+
             if (Deployable)
             {
                 foreach (AnimationState deployState in deployStates)
@@ -323,7 +325,7 @@ namespace NearFutureSolar
             RaycastHit hit;
             if (Physics.Raycast(refXForm.position,  refXForm.position - sun.transform.position,out hit,2500f))
             {
-                
+
                 Transform hitObj = hit.transform;
                 Part pt = hitObj.GetComponent<Part>();
                 if (pt != null && pt != part)
@@ -392,7 +394,7 @@ namespace NearFutureSolar
 
             //}
 
-            
+
         }
 
 
@@ -414,6 +416,6 @@ namespace NearFutureSolar
             }
             return checker;
         }
-    
+
     }
 }
