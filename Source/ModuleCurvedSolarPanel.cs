@@ -86,9 +86,9 @@ namespace NearFutureSolar
             if (!Deployable)
                 return;
 
-            foreach (AnimationState deployState in deployStates)
+            for (int i = 0; i < deployStates.Length ; i++)
             {
-                deployState.speed = 1;
+                deployStates[i].speed = 1;
             }
             State = ModuleDeployablePart.DeployState.EXTENDING;
         }
@@ -99,9 +99,9 @@ namespace NearFutureSolar
             if (!Deployable)
                 return;
 
-            foreach (AnimationState deployState in deployStates)
+            for (int i = 0; i < deployStates.Length ; i++)
             {
-                deployState.speed = -1;
+                deployStates[i].speed = -1;
             }
             State = ModuleDeployablePart.DeployState.RETRACTING;
         }
@@ -179,16 +179,16 @@ namespace NearFutureSolar
 
                 if (State == ModuleDeployablePart.DeployState.EXTENDED || State == ModuleDeployablePart.DeployState.EXTENDING)
                 {
-                    foreach (AnimationState deployState in deployStates)
+                    for (int i = 0; i < deployStates.Length ; i++)
                     {
-                        deployState.normalizedTime = 1f;
+                        deployStates[i].normalizedTime = 1f;
                     }
                 }
                 else if (State == ModuleDeployablePart.DeployState.RETRACTED || State == ModuleDeployablePart.DeployState.RETRACTING)
                 {
-                    foreach (AnimationState deployState in deployStates)
+                    for (int i = 0; i < deployStates.Length ; i++)
                     {
-                        deployState.normalizedTime = 0f;
+                        deployStates[i].normalizedTime = 0f;
                     }
                 }
                 else
@@ -228,13 +228,13 @@ namespace NearFutureSolar
                     string body = "";
                     string obscuringPart = "";
 
-                    foreach (Transform panel in panelTransforms)
+                    for (int i = 0; i < panelTransforms.Length; i++)
                     {
                         float angle = 0f;
 
-                        if (SolarLOS(panel, out angle, out body))
+                        if (SolarLOS(panelTransforms[i], out angle, out body))
                         {
-                            if (PartLOS(panel, out obscuringPart))
+                            if (PartLOS(panelTransforms[i], out obscuringPart))
                             {
                                 sunExposure += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) / panelCount;
                                 energyFlow += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) * chargePerTransform;
@@ -291,9 +291,9 @@ namespace NearFutureSolar
 
             if (Deployable)
             {
-                foreach (AnimationState deployState in deployStates)
+                for (int i = 0; i < deployStates.Length ; i++)
                 {
-                    deployState.normalizedTime = Mathf.Clamp01(deployState.normalizedTime);
+                    deployStates[i].normalizedTime = Mathf.Clamp01(deployStates[i].normalizedTime);
                 }
                 if (State == ModuleDeployablePart.DeployState.RETRACTING)
                 {
@@ -401,18 +401,18 @@ namespace NearFutureSolar
         private float EvalAnimationCompletion(AnimationState[] states)
         {
             float checker = 0f;
-            foreach (AnimationState state in states)
+            for (int i = 0; i < states.Length ; i++)
             {
-                checker = Mathf.Max(state.normalizedTime, checker);
+                checker = Mathf.Max(states[i].normalizedTime, checker);
             }
             return checker;
         }
         private float EvalAnimationCompletionReversed(AnimationState[] states)
         {
             float checker = 1f;
-            foreach (AnimationState state in states)
+            for (int i = 0; i < states.Length ; i++)
             {
-                checker = Mathf.Min(state.normalizedTime, checker);
+                checker = Mathf.Min(states[i].normalizedTime, checker);
             }
             return checker;
         }
