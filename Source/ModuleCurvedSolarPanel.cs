@@ -90,7 +90,7 @@ namespace NearFutureSolar
             {
                 deployState.speed = 1;
             }
-            State = ModuleDeployableSolarPanel.panelStates.EXTENDING;
+            State = ModuleDeployablePart.DeployState.EXTENDING;
         }
 
         // Retract Panels
@@ -103,31 +103,31 @@ namespace NearFutureSolar
             {
                 deployState.speed = -1;
             }
-            State = ModuleDeployableSolarPanel.panelStates.RETRACTING;
+            State = ModuleDeployablePart.DeployState.RETRACTING;
         }
         // Toggle Panels
         public void Toggle()
         {
-            if (State == ModuleDeployableSolarPanel.panelStates.EXTENDED)
+            if (State == ModuleDeployablePart.DeployState.EXTENDED)
                 Retract();
-            else if (State == ModuleDeployableSolarPanel.panelStates.RETRACTED)
+            else if (State == ModuleDeployablePart.DeployState.RETRACTED)
                 Deploy();
             else
                 return;
         }
 
         // Get the state
-        public ModuleDeployableSolarPanel.panelStates State
+        public ModuleDeployablePart.DeployState State
         {
             get
             {
                 try
                 {
-                    return (ModuleDeployableSolarPanel.panelStates)Enum.Parse(typeof(ModuleDeployableSolarPanel.panelStates), SavedState);
+                    return (ModuleDeployablePart.DeployState)Enum.Parse(typeof(ModuleDeployablePart.DeployState), SavedState);
                 }
                 catch
                 {
-                    State = ModuleDeployableSolarPanel.panelStates.RETRACTED;
+                    State = ModuleDeployablePart.DeployState.RETRACTED;
                     return State;
                 }
             }
@@ -177,14 +177,14 @@ namespace NearFutureSolar
                 deployStates = Utils.SetUpAnimation(DeployAnimation, this.part);
 
 
-                if (State == ModuleDeployableSolarPanel.panelStates.EXTENDED || State == ModuleDeployableSolarPanel.panelStates.EXTENDING)
+                if (State == ModuleDeployablePart.DeployState.EXTENDED || State == ModuleDeployablePart.DeployState.EXTENDING)
                 {
                     foreach (AnimationState deployState in deployStates)
                     {
                         deployState.normalizedTime = 1f;
                     }
                 }
-                else if (State == ModuleDeployableSolarPanel.panelStates.RETRACTED || State == ModuleDeployableSolarPanel.panelStates.RETRACTING)
+                else if (State == ModuleDeployablePart.DeployState.RETRACTED || State == ModuleDeployablePart.DeployState.RETRACTING)
                 {
                     foreach (AnimationState deployState in deployStates)
                     {
@@ -218,7 +218,7 @@ namespace NearFutureSolar
         {
             if (flight)
             {
-                if (!Deployable || (Deployable && (State == ModuleDeployableSolarPanel.panelStates.EXTENDED ) ))
+                if (!Deployable || (Deployable && (State == ModuleDeployablePart.DeployState.EXTENDED ) ))
                 {
                     sunExposure = 0f;
                     energyFlow = 0f;
@@ -273,12 +273,12 @@ namespace NearFutureSolar
                     }
 
                     part.RequestResource(ResourceName, (-realFlow) * TimeWarp.fixedDeltaTime);
-                } else if  (Deployable && (State == ModuleDeployableSolarPanel.panelStates.BROKEN ))
+                } else if  (Deployable && (State == ModuleDeployablePart.DeployState.BROKEN ))
                 {
                     SunExposure = "Broken!";
                     EnergyFlow = "Panels Retracted";
                 }
-                else if (Deployable && (State == ModuleDeployableSolarPanel.panelStates.RETRACTED))
+                else if (Deployable && (State == ModuleDeployablePart.DeployState.RETRACTED))
                 {
                     SunExposure = "Panels Retracted";
                     EnergyFlow = "Panels Retracted";
@@ -295,19 +295,19 @@ namespace NearFutureSolar
                 {
                     deployState.normalizedTime = Mathf.Clamp01(deployState.normalizedTime);
                 }
-                if (State == ModuleDeployableSolarPanel.panelStates.RETRACTING)
+                if (State == ModuleDeployablePart.DeployState.RETRACTING)
                 {
                     if (EvalAnimationCompletionReversed(deployStates) == 0f)
-                        State = ModuleDeployableSolarPanel.panelStates.RETRACTED;
+                        State = ModuleDeployablePart.DeployState.RETRACTED;
                 }
 
-                if (State == ModuleDeployableSolarPanel.panelStates.EXTENDING)
+                if (State == ModuleDeployablePart.DeployState.EXTENDING)
                 {
                     if (EvalAnimationCompletion(deployStates) == 1f)
-                        State = ModuleDeployableSolarPanel.panelStates.EXTENDED;
+                        State = ModuleDeployablePart.DeployState.EXTENDED;
                 }
 
-                if ((State == ModuleDeployableSolarPanel.panelStates.EXTENDED && Events["DeployPanels"].active) || (State == ModuleDeployableSolarPanel.panelStates.RETRACTED && Events["RetractPanels"].active))
+                if ((State == ModuleDeployablePart.DeployState.EXTENDED && Events["DeployPanels"].active) || (State == ModuleDeployablePart.DeployState.RETRACTED && Events["RetractPanels"].active))
                 {
                     Events["DeployPanels"].active = !Events["DeployPanels"].active;
                     Events["RetractPanels"].active = !Events["RetractPanels"].active;
