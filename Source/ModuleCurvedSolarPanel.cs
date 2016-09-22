@@ -170,7 +170,7 @@ namespace NearFutureSolar
 
             panelTransforms = part.FindModelTransforms(PanelTransformName);
             panelCount = panelTransforms.Length;
-            chargePerTransform = TotalEnergyRate / panelCount;
+
 
             if (Deployable)
             {
@@ -227,6 +227,8 @@ namespace NearFutureSolar
                     int blockedBodyCount = 0;
                     string body = "";
                     string obscuringPart = "";
+
+                    chargePerTransform = TotalEnergyRate / panelCount;
 
                     for (int i = 0; i < panelTransforms.Length; i++)
                     {
