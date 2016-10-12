@@ -1,6 +1,7 @@
 v0.7.0
 ------
 - KSP 1.2
+- Small tweak to plugin code for TweakScale and for 1.2
 - Moved all panels to the new Electrics category
 - Updated bundled MM version
 
