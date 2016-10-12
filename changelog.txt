@@ -3,6 +3,7 @@ v0.7.0
 - KSP 1.2
 - Small tweak to plugin code for TweakScale and for 1.2
 - Moved all panels to the new Electrics category
+- Minor tweak to plugin that will help TweakScale work on curved panels if it needs to
 - Updated bundled MM version
 
 v0.6.2
@@ -88,7 +89,7 @@ v0.2.1
 - Fixed a problem with the attach nodes on the PX-STAT 1x4
 - Updated many panel descriptions
 - Fixed a bug in CurvedSolarPanel (Thanks Maeyanie)
-- Fixed the Solo solar panel's scale being 1.25x too large. 
+- Fixed the Solo solar panel's scale being 1.25x too large.
 
 v0.2.0
 ------
