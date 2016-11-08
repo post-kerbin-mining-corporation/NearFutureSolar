@@ -1,3 +1,8 @@
+v0.7.1
+------
+- Marked for KSP 1.2.1
+- Updated MM to 2.7.3
+
 v0.7.0
 ------
 - KSP 1.2
