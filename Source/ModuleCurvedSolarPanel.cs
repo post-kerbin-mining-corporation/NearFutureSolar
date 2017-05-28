@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.Localization;
 
 namespace NearFutureSolar
 {
@@ -155,22 +156,33 @@ namespace NearFutureSolar
         // Info for ui
         public override string GetInfo()
         {
-            return String.Format("Ideal Charge Rate: {0:F2} Ec/s", TotalEnergyRate);
+            return Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_PartInfo", TotalEnergyRate.ToString("F2"));
         }
 
-
-        public override void OnLoad(ConfigNode node)
+        public string GetModuleTitle()
         {
-            base.OnLoad(node);
-            this.moduleName = "Curved Solar Panel";
+            return "CurvedSolarPanel";
         }
-
+        public override string GetModuleDisplayName()
+        {
+            return Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_ModuleName");
+        }
         public override void OnStart(PartModule.StartState state)
         {
 
             panelTransforms = part.FindModelTransforms(PanelTransformName);
             panelCount = panelTransforms.Length;
 
+            Actions["DeployPanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_DeployPanelsAction");
+            Actions["RetractPanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_RetractPanelsAction");
+            Actions["TogglePanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_TogglePanelsAction");
+
+            Events["DeployPanels"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Event_DeployPanels");
+            Events["RetractPanels"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Event_RetractPanels");
+            Events["TogglePanels"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Event_TogglePanels");
+
+            Fields["EnergyFlow"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow");
+            Fields["SunExposure"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure");
 
             if (Deployable)
             {
@@ -267,23 +279,23 @@ namespace NearFutureSolar
 
                     if (blockedPartCount >= panelCount)
                     {
-                        SunExposure = "Blocked by " + obscuringPart + "!";
+                        SunExposure = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure_Blocked", obscuringPart.ToString());
                     }
                     if (blockedBodyCount >= panelCount)
                     {
-                        SunExposure = "Blocked by " + body + "!";
+                        SunExposure = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure_Blocked", body.ToString());
                     }
 
                     part.RequestResource(ResourceName, (-realFlow) * TimeWarp.fixedDeltaTime);
                 } else if  (Deployable && (State == ModuleDeployablePart.DeployState.BROKEN ))
                 {
-                    SunExposure = "Broken!";
-                    EnergyFlow = "Panels Retracted";
+                    SunExposure = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure_Broken");
+                    EnergyFlow = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow_Broken"); 
                 }
                 else if (Deployable && (State == ModuleDeployablePart.DeployState.RETRACTED))
                 {
-                    SunExposure = "Panels Retracted";
-                    EnergyFlow = "Panels Retracted";
+                    SunExposure = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure_Retracted");
+                    EnergyFlow = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow_Retracted");  
                 }
             }
         }
