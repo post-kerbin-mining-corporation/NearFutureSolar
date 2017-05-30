@@ -8,12 +8,14 @@ v0.8.0
 - Reworked manufacturer names to reduce the number of new manufacturers
 - Adjusted position of suncatcher transforms on SOL-A, NIV-3 and NIV-16 panels
 - K7R 1x4 Concentrating Photovoltaic Panels are no longer retractable
+- Adjusted shaders for many panels to improve looks
 - Added K7R 1x4 Concentrating Photovoltaic Panels and K5R 1x3 Concentrating Photovoltaic Panels, variants of two current panels with added shrouds and retractability
 - Added SOL-B Expanding Curved Solar Array (3.75m to 10m expanding curved solar array)
 - Added OKEB-125 Blanket Solar Array (based on NASA asteroid tug concept)
 - Added OKEB-75 Blanket Solar Array (based on SpaceX ITS solar array concept)
-- Added K-125-SE Terador Solar Array (dual-axis huge solar array)
-- Added new plugin component to run Terador Solar arrays
+- Added YF-125 Blanket Solar Array (based on NASA asteroid tug concept)
+- Added YF-75 Blanket Solar Array (based on SpaceX ITS solar array concept)
+
 
 v0.7.3
 ------
