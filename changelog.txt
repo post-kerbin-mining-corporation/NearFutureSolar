@@ -1,6 +1,8 @@
 v0.8.0
 ------
 - KSP 1.3
+- Updated MM to 2.8.0
+- Updated MiniAVC to 1.0.3.3
 - Converted all part name/descriptions to localization system
 - Rebalanced solar panel masses and costs for more consistency
 - Removed retractable part search tag from parts that are not retractable
