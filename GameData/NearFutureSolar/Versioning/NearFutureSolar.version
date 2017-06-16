@@ -1,18 +1,18 @@
 {
     "NAME":"NearFutureSolar",
-    "URL":"https://github.com/ChrisAdderley/NearFutureSolar/blob/master/GameData/NearFutureSolar/Versioning/NearFutureSolar.version",
-    "DOWNLOAD":"http://forum.kerbalspaceprogram.com/threads/52042",
+    "URL":"https://raw.githubusercontent.com/ChrisAdderley/NearFutureSolar/master/GameData/NearFutureSolar/Versioning/NearFutureSolar.version",
+    "DOWNLOAD":"http://forum.kerbalspaceprogram.com/index.php?/topic/155465-near-future-technologies",
     "VERSION":
     {
         "MAJOR":0,
-        "MINOR":7,
-        "PATCH":2,
+        "MINOR":8,
+        "PATCH":0,
         "BUILD":0
     },
     "KSP_VERSION":
     {
         "MAJOR":1,
-        "MINOR":2,
-        "PATCH":2
+        "MINOR":3,
+        "PATCH":0
     }
 }
