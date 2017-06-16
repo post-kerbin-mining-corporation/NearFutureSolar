@@ -15,9 +15,6 @@ v0.8.0
 - Added SOL-B Expanding Curved Solar Array (3.75m to 10m expanding curved solar array)
 - Added OKEB-125 Blanket Solar Array (based on NASA asteroid tug concept)
 - Added OKEB-75 Blanket Solar Array (based on SpaceX ITS solar array concept)
-- Added YF-125 Blanket Solar Array (based on NASA asteroid tug concept)
-- Added YF-75 Blanket Solar Array (based on SpaceX ITS solar array concept)
-
 
 v0.7.3
 ------
