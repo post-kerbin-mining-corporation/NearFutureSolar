@@ -1,3 +1,7 @@
+v0.8.1
+------
+- Hotfixed a bad panel texture
+
 v0.8.0
 ------
 - KSP 1.3
