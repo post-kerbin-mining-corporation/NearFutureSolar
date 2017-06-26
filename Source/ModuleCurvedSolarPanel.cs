@@ -167,7 +167,7 @@ namespace NearFutureSolar
         {
             return Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_ModuleName");
         }
-        public override void OnStart(PartModule.StartState state)
+        public void Start()
         {
 
             panelTransforms = part.FindModelTransforms(PanelTransformName);
@@ -215,7 +215,7 @@ namespace NearFutureSolar
                 Events["TogglePanels"].active = false;
             }
 
-            if (state != StartState.Editor)
+            if (HighLogic.LoadedSceneIsFlight)
             {
                 sunTransform = FlightGlobals.Bodies[0].bodyTransform;
                 flight = true;
@@ -248,6 +248,7 @@ namespace NearFutureSolar
 
                         if (SolarLOS(panelTransforms[i], out angle, out body))
                         {
+                            Debug.Log(angle);
                             if (PartLOS(panelTransforms[i], out obscuringPart))
                             {
                                 sunExposure += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) / panelCount;
@@ -271,7 +272,10 @@ namespace NearFutureSolar
                     }
 
                     double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
-                    float realFlow = powerCurve.Evaluate((float)altAboveSun) * energyFlow;
+                    
+
+                    float realFlow = energyFlow * (float)( (13599840256d *13599840256d )/ (altAboveSun*altAboveSun));
+
                     //Debug.Log(altAboveSun.ToString() + ", gives " + realFlow);
 
                     EnergyFlow = String.Format("{0:F2}", realFlow);

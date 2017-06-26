@@ -1,3 +1,22 @@
+v0.8.3
+------
+- Added Spanish Translation courtesy of forum user fitiales
+
+
+v0.8.2
+------
+- Fixed specular exponent of T22 1x5 Concentrating Photovoltaic Panels being applied to the whole panel and not just the cells
+- Fixed specular exponent of T14 1x5 Concentrating Photovoltaic Panels being applied to the panel instead of the cells
+- Normalized specular exponent of blanket panels
+- Fixed attach orientation and scaling of PX-STAT 1x2 Photovoltaic Truss
+- Fixed electricity generation of all curved solar panels
+- Fixed mixed up names of NIV-10 and NIV-30 Curved Solar Arrays
+- Fixed typos in a few panel names
+
+v0.8.1
+------
+- Hotfixed a bad panel texture
+
 v0.8.0
 ------
 - KSP 1.3
