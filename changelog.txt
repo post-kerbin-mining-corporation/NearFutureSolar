@@ -1,3 +1,8 @@
+v0.8.3
+------
+- Added Spanish Translation courtesy of forum user fitiales
+
+
 v0.8.2
 ------
 - Fixed specular exponent of T22 1x5 Concentrating Photovoltaic Panels being applied to the whole panel and not just the cells
