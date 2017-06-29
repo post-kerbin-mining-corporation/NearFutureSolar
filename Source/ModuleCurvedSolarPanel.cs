@@ -248,7 +248,6 @@ namespace NearFutureSolar
 
                         if (SolarLOS(panelTransforms[i], out angle, out body))
                         {
-                            Debug.Log(angle);
                             if (PartLOS(panelTransforms[i], out obscuringPart))
                             {
                                 sunExposure += Mathf.Clamp01(Mathf.Cos(angle * Mathf.Deg2Rad)) / panelCount;
@@ -272,7 +271,7 @@ namespace NearFutureSolar
                     }
 
                     double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
-                    
+
 
                     float realFlow = energyFlow * (float)( (13599840256d *13599840256d )/ (altAboveSun*altAboveSun));
 
@@ -294,12 +293,12 @@ namespace NearFutureSolar
                 } else if  (Deployable && (State == ModuleDeployablePart.DeployState.BROKEN ))
                 {
                     SunExposure = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure_Broken");
-                    EnergyFlow = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow_Broken"); 
+                    EnergyFlow = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow_Broken");
                 }
                 else if (Deployable && (State == ModuleDeployablePart.DeployState.RETRACTED))
                 {
                     SunExposure = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_SunExposure_Retracted");
-                    EnergyFlow = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow_Retracted");  
+                    EnergyFlow = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Field_EnergyFlow_Retracted");
                 }
             }
         }

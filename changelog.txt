@@ -1,3 +1,7 @@
+v0.8.4
+------
+- Fixed a rogue debug logging call
+
 v0.8.3
 ------
 - Added Spanish Translation courtesy of forum user fitiales
