@@ -1,5 +1,5 @@
 =============================
-NEAR FUTURE SOLAR PACK v0.8.3
+NEAR FUTURE SOLAR PACK v0.8.5
 =============================
 
 This pack contains many modern and fancy solar panels to use on your ships and stations.
@@ -9,7 +9,7 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (2.8.0)
+- ModuleManager (2.8.1)
 
 Optional
 - Community Tech Tree (v2.2+)
@@ -29,6 +29,14 @@ KSP-MINI-AVC
 This mod includes version checking using MiniAVC (http://forum.kerbalspaceprogram.com/threads/79745).
 If you opt-in, it will use the internet to check whether there is a new version available. Data is only read from the internet and no personal information is sent.
 For a more comprehensive version checking experience, please download the KSP-AVC Plugin (http://forum.kerbalspaceprogram.com/threads/79745).
+
+============
+LOCALIZATION
+============
+
+This mod includes localization support, and includes translations for
+- Spanish (KSP forum user fitiales)
+- Chinese (KSP forum user DY_ZBX)
 
 =========
 LICENSING
