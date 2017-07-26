@@ -1,3 +1,8 @@
+v0.8.5
+------
+- Moved collider hierarchy for OKEB-75 Solar array (fixes collider not detaching)
+- Chinese translation courtesy of forum user DY_ZBX
+
 v0.8.4
 ------
 - Fixed a rogue debug logging call
