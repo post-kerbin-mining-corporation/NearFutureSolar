@@ -1,6 +1,8 @@
 v0.8.8
 ------
 - Fixed scaling of large fixed solar array
+- Adjusted suncatcher location of Trio solar array
+- Reexport of OKEB-75 solar array, might help FAR problem, might not. 
 
 v0.8.7
 ------
