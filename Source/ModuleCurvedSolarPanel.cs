@@ -38,6 +38,8 @@ namespace NearFutureSolar
         public float energyFlow;
 
         public float sunExposure;
+        
+        public double homeAltAboveSun = 13599840256; // Stock Kerbin
 
         // ACTIONS
         // -----------------
@@ -172,6 +174,7 @@ namespace NearFutureSolar
 
             panelTransforms = part.FindModelTransforms(PanelTransformName);
             panelCount = panelTransforms.Length;
+            homeAltAboveSun = FlightGlobals.getAltitudeAtPos(FlightGlobals.GetHomeBody().position, FlightGlobals.Bodies[0]);
 
             Actions["DeployPanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_DeployPanelsAction");
             Actions["RetractPanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_RetractPanelsAction");
@@ -273,7 +276,7 @@ namespace NearFutureSolar
                     double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
 
 
-                    float realFlow = energyFlow * (float)( (13599840256d *13599840256d )/ (altAboveSun*altAboveSun));
+                    float realFlow = energyFlow * (float)( (homeAltAboveSun*homeAltAboveSun) / (altAboveSun*altAboveSun));
 
                     //Debug.Log(altAboveSun.ToString() + ", gives " + realFlow);
 
