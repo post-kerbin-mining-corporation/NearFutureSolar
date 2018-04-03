@@ -1,3 +1,8 @@
+v0.8.9
+------
+- KSP 1.4.2 rebuild
+- Fixed sun distance being hardcoded (jsolson)
+
 v0.8.8
 ------
 - Fixed scaling of large fixed solar array
