@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +38,8 @@ namespace NearFutureSolar
         public float energyFlow;
 
         public float sunExposure;
+        
+        public double homeAltAboveSun;
 
         // ACTIONS
         // -----------------
@@ -173,6 +175,11 @@ namespace NearFutureSolar
             panelTransforms = part.FindModelTransforms(PanelTransformName);
             panelCount = panelTransforms.Length;
 
+            // Get homeworld's distance from Sun.
+            // Dealing with systems that could have either have homeworlds in very eccentric
+            // orbits or as moons of another body would need something more sophisticated.
+            homeAltAboveSun = FlightGlobals.getAltitudeAtPos(FlightGlobals.GetHomeBody().position, FlightGlobals.Bodies[0]);
+
             Actions["DeployPanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_DeployPanelsAction");
             Actions["RetractPanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_RetractPanelsAction");
             Actions["TogglePanelsAction"].guiName = Localizer.Format("#LOC_NFSolar_ModuleCurvedSolarPanel_Action_TogglePanelsAction");
@@ -273,7 +280,7 @@ namespace NearFutureSolar
                     double altAboveSun = FlightGlobals.getAltitudeAtPos(vessel.GetWorldPos3D(), FlightGlobals.Bodies[0]);
 
 
-                    float realFlow = energyFlow * (float)( (13599840256d *13599840256d )/ (altAboveSun*altAboveSun));
+                    float realFlow = energyFlow * (float)( (homeAltAboveSun*homeAltAboveSun) / (altAboveSun*altAboveSun));
 
                     //Debug.Log(altAboveSun.ToString() + ", gives " + realFlow);
 

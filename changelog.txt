@@ -1,8 +1,14 @@
+v0.8.9
+------
+- KSP 1.4.2 rebuild
+- Updated MiniAVC to 1.2.0.1
+- Fixed sun distance being hardcoded (jsolson)
+
 v0.8.8
 ------
 - Fixed scaling of large fixed solar array
 - Adjusted suncatcher location of Trio solar array
-- Reexport of OKEB-75 solar array, might help FAR problem, might not. 
+- Reexport of OKEB-75 solar array, might help FAR problem, might not.
 
 v0.8.7
 ------
