@@ -1,3 +1,7 @@
+v0.8.10
+-------
+- Fixed .version file issue
+
 v0.8.9
 ------
 - KSP 1.4.2 rebuild
