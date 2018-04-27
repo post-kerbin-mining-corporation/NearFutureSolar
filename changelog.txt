@@ -1,3 +1,8 @@
+v0.8.11
+-------
+- KSP 1.4.3
+- Switched versioning to mix/max specification
+
 v0.8.10
 -------
 - Fixed .version file issue
