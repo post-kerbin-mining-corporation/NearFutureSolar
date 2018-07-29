@@ -1,3 +1,10 @@
+v0.8.12
+-------
+- KSP 1.4.5
+- Updated bundled MM version
+- Rebuilt project for new version
+- Widened KSP min/max specification
+
 v0.8.11
 -------
 - KSP 1.4.3
