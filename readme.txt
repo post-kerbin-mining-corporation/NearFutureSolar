@@ -1,5 +1,5 @@
 ==============================
-NEAR FUTURE SOLAR PACK v0.8.14
+NEAR FUTURE SOLAR PACK v0.8.15
 ==============================
 
 This pack contains many modern and fancy solar panels to use on your ships and stations.
@@ -35,6 +35,7 @@ LOCALIZATION
 This mod includes localization support, and includes translations for
 - Spanish (KSP forum user fitiales)
 - Chinese (KSP forum user DY_ZBX)
+- German (KSP forum user Three_Pounds)
 
 =========
 LICENSING
