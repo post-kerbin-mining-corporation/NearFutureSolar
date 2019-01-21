@@ -39,6 +39,16 @@ This mod includes compatibility patches for the following mods:
 
 I certainly accept pull requests. Please target all such things to the `dev` branch though!
 
+## Localization
+
+## Translations
+
+For translation instructions please see [Localization Instructions](https://github.com/ChrisAdderley/NearFutureSolar/blob/master/GameData/NearFutureSolar/Localization/Localization.md)
+
+* **Spanish**: fitiales
+* **German**: Three_Pounds
+* **Simplified Chinese**: DY_ZBX
+
 ## Licensing
 
 The art assets in this pack (all .dds, .png and .mu files) are distributed under an All Rights Reserved license. You may not redistribute or re-use these assets without express permission from the author.
