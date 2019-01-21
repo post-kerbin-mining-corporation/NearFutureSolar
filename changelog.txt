@@ -1,6 +1,7 @@
 v0.8.15
 ------
 - German translation from Three_Pounds
+- Fixed missing bulkhead profiles (thanks Streetwind)
 
 v0.8.14
 ------
