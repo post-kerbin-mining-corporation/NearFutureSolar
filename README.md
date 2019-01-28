@@ -48,6 +48,7 @@ For translation instructions please see [Localization Instructions](https://gith
 * **Spanish**: fitiales
 * **German**: Three_Pounds
 * **Simplified Chinese**: DY_ZBX
+* **Italian**: fr33soul
 
 ## Licensing
 

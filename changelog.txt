@@ -1,3 +1,7 @@
+v0.8.16
+------
+- Italian translation from fr33soul
+
 v0.8.15
 ------
 - German translation from Three_Pounds
