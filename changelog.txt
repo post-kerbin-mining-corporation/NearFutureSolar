@@ -1,3 +1,29 @@
+v1.0.0
+------
+- Final content release
+- Updated ModuleManager to 4.0.2
+- Complete artistic redo
+ - Division of Basic, Advanced, Blanket, Concentrator panels is more visually clear
+ - Use of reflective shader improves fidelity
+ - Consistent texel density
+ - Continuity with Restock project
+ - K7K 1x4 panels have been redone to modern Dragon 1 style
+ - K55 Megalador has a completely new model with a different closed footprint
+ - OKEB-100 has a completely new model with a different closed footprint
+- New panels:
+ - K2 1x2 Advanced Photovoltaic Panels: Small 2 kW array based on MRO panels
+ - K4 3x1 Advanced Photovoltaic Panels: Small 4 kW array based on TDRSS Gen 1 panels
+ - K20k 1+2+1 Concentrating Photovoltaic Panels: Medium 20 KW array based on JUICE panels
+ - K40 'Hub' Advanced Photovoltaic Array: Medium 40 kW sized array
+ - OKEB-250 'Starship' Blanket Photovoltaic Array: Huge 250 kW panels based off the SpaceX Starship panels
+- 'Concentrating' moniker is now 'Advanced' in most cases except for the Juno and JUICE inspired panels (no effect on gameplay)
+- Most large panels got new nicknames
+- Removed certain tags from un-retractable panels to remove them from searches
+- Balance changes:
+  - OKEB-125 panel can now be retracted
+  - K90 'Trio' and K30 '' are now Blanket style arrays from a balance PoV, and are retitled as OKEB-15 and OKEB-45
+
+
 v0.8.16
 ------
 - Italian translation from fr33soul
