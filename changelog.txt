@@ -1,27 +1,40 @@
 v1.0.0
 ------
-- Final content release
+- KSP 1.7.x
+- Final content update
 - Updated ModuleManager to 4.0.2
+- Soft-deprecated all old solar panel parts: you have 2-3 months before they are removed (this was necessary due to extensive model changes)
+- New part configs and names introduced - easier to parse for me/end users
 - Complete artistic redo
- - Division of Basic, Advanced, Blanket, Concentrator panels is more visually clear
- - Use of reflective shader improves fidelity
- - Consistent texel density
- - Continuity with Restock project
- - K7K 1x4 panels have been redone to modern Dragon 1 style
- - K55 Megalador has a completely new model with a different closed footprint
- - OKEB-100 has a completely new model with a different closed footprint
-- New panels:
- - K2 1x2 Advanced Photovoltaic Panels: Small 2 kW array based on MRO panels
- - K4 3x1 Advanced Photovoltaic Panels: Small 4 kW array based on TDRSS Gen 1 panels
- - K20k 1+2+1 Concentrating Photovoltaic Panels: Medium 20 KW array based on JUICE panels
- - K40 'Hub' Advanced Photovoltaic Array: Medium 40 kW sized array
- - OKEB-250 'Starship' Blanket Photovoltaic Array: Huge 250 kW panels based off the SpaceX Starship panels
-- 'Concentrating' moniker is now 'Advanced' in most cases except for the Juno and JUICE inspired panels (no effect on gameplay)
-- Most large panels got new nicknames
-- Removed certain tags from un-retractable panels to remove them from searches
-- Balance changes:
+  - Division of Basic, Advanced, Blanket, Concentrator panels is more visually clear
+  - Use of reflective shader to improve visual fidelity
+  - Consistent texel density for all components
+  - Visual continuity with Restock project
+- Panel naming convention has been clarified:
+  - Non-blanket deployable panel nomenclature is now K{EC Output}-{Suffix}, where Suffix is composed of A (advanced), R (retractable) and/or C (concentrating) as appropriate
+  - Blanket nomenclature is OKEB-{EC Output} with an R suffix if retractable
+  - Circular nomenclature is NIV-{EC Output} with an R suffix if retractable
+  - Most panels got new nicknames
+  - Removed certain tags from un-retractable panels to remove them from searches
+- Manufacturer naming has been tweaked and consolidated
+- Many descriptions were rewritten
+- Several replaced/ significantly modified models
+  - K7-A/K7-AR 1x4 panels have been replaced with a modern Dragon 1 style
+  - K22-A, K15-A panels are now physically larger (previously they were too small for their power output)
+  - K55 Megalador has a completely different model with a different closed footprint
+  - OKEB-125 has a completely different model with a different closed and open footprint
+  - NIV-30 has been reworked to be visually similar to Dragon 2 wraparound panels
+- Major balance changes:
   - OKEB-125 panel can now be retracted
-  - K90 'Trio' and K30 '' are now Blanket style arrays from a balance PoV, and are retitled as OKEB-15 and OKEB-45
+  - K90 'Trio' and K30 'Solo' are now Blanket style arrays from a balance PoV, and are retitled as OKEB-15 and OKEB-45. They can no longer be retracted.
+  - YF-8 Circular Solar Array is now Blanket  style from a balance PoV, and is retitled as OKEB-4R
+- New panels:
+  - K2-A 1x2 Advanced Photovoltaic Panels: Small Advanced 2 kW array based on MRO panels
+  - K4-A 3x1 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on TDRSS Gen 1 panels
+  - K20-C 1+2+1 Concentrating Photovoltaic Panels: Medium Concentrating 20 KW array based on JUICE panels
+  - K40-AR 'Oar' Advanced Photovoltaic Array: Medium Advanced 40 kW sized retractable array
+  - OKEB-XX 'Starship' Blanket Photovoltaic Array: Huge Blanket XX kW panels based off the SpaceX Starship panels
+  - OKEB-250 'Ares' Blanket Photovoltaic Array: Huge Blanket 240 kW panels based off NASA DST concept art
 
 
 v0.8.16
