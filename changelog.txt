@@ -25,7 +25,7 @@ v1.0.0
   - OKEB-100 has a completely different model with a different closed and open footprint based off a Deep Space Gateway concept illustration
   - OKEB-500 has a completely different model with a different closed and open footprint based off NASA DRM5 SEP-CHEM option concept
   - NIV-30 has been reworked to be visually similar to Dragon 2 wraparound panels
-  - NIV-18 has been reworked to be visually similar to Dragon 2 wraparound panels but in a wider footprint. Renamed to NIV-50
+  - NIV-18 has been reworked to be visually similar to Dragon 2 wraparound panels but in a wider footprint. Renamed to NIV-45
 - Balance changes:
   - Concentrator arrays have new cost/mass tier: even more expensive, slightly more massive, better output/area
   - OKEB-125 panel can now be retracted, power output updated to 150 kw (also retitled OKEB-150 as a result)
@@ -39,8 +39,10 @@ v1.0.0
   - K4-A 3x1 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on TDRSS Gen 1 panels
   - K20-C 1+2+1 Concentrating Photovoltaic Panels: Medium Concentrating 20 KW array based on JUICE panels
   - K40-AR 'Oar' Advanced Photovoltaic Array: Medium Advanced 40 kW sized retractable array
+  - KX-STAT Advanced Photovoltaic Truss: Single-panel version of the KX-STAT series
   - OKEB-XX 'Starship' Blanket Photovoltaic Array: Huge Blanket XX kW panels based off the SpaceX Starship panels
   - OKEB-250 'Ares' Blanket Photovoltaic Array: Huge Blanket 250 kW panels based off NASA DST concept art
+  - IX-A 3x1 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on TDRSS Gen 1 panels
 
 v0.8.16
 ------
