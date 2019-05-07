@@ -6,7 +6,7 @@ v1.0.0
 - Soft-deprecated all old solar panel parts: you have 2-3 months before they are removed PERMANENTLY (this was necessary due to extensive model changes)
 - New part configs and names introduced - easier to parse for me/end users
 - Complete artistic redo
-  - Division of Basic, Advanced, Blanket, Concentrator panels is more visually clear
+  - Division of Basic, Advanced, Blanket, Concentrator panels is now visually clear - Advanced panels have a different cell design from stock, Concentrators add a fresnel lens effect to each cell and Blanket includes the gold taped kapton look of the ISS solar arrays
   - Use of reflective shader to improve visual fidelity
   - Consistent texel density for all components
   - Visual continuity with Restock project
@@ -14,33 +14,36 @@ v1.0.0
   - Non-blanket deployable panel nomenclature is now K{EC Output}-{Suffix}, where Suffix is composed of A (advanced), R (retractable) and/or K (concentrating) as appropriate
   - Blanket nomenclature is OKEB-{EC Output} with an R suffix if retractable
   - Circular nomenclature is NIV-{EC Output} with an R suffix if retractable
-  - Most panels got new nicknames
+  - Most larger panels got new nicknames
   - Removed certain tags from un-retractable panels to remove them from searches
-- Manufacturer naming has been tweaked and consolidated
-- Many descriptions were rewritten
-- Several replaced/ significantly modified models
+- Manufacturer naming has been tweaked and consolidated into two manufacturers
+- Many descriptions were rewritten to account for changes
+- Several replaced/significantly modified models:
   - K7-A/K7-AR 1x4 panels have been replaced with a modern Dragon 1 style
   - K22-A, K15-A panels are now physically larger (previously they were too small for their power output)
   - K55 Megalador has a completely different model with a different closed footprint
   - OKEB-100 has a completely different model with a different closed and open footprint based off a Deep Space Gateway concept illustration
-  - OKEB-500 has a completely different model with a different closed and open footprint based off NASA DRM5 SEP-CHEM option concept
+  - OKEB-500 has a completely different model with a different closed and open footprint based off NASA DRM5 SEP-CHEM option
+  - OKEB-75-R has a completely different model with a different closed and open footprint, and is now fully shrouded.
   - NIV-30 has been reworked to be visually similar to Dragon 2 wraparound panels
-  - NIV-18 has been reworked to be visually similar to Dragon 2 wraparound panels but in a wider footprint. Renamed to NIV-45
+  - NIV-18 has been reworked to be visually similar to Dragon 2 wraparound panels but in a taller footprint. Renamed to NIV-45.
+  - Static truss panels can now be switched between truss and flat versions for flush attachment options
 - Balance changes:
-  - Concentrator arrays have new cost/mass tier: even more expensive, slightly more massive, better output/area
+  - Concentrator arrays have new cost/mass tier: even more expensive, slightly more massive, best output/area
   - OKEB-125 panel can now be retracted, power output updated to 150 kw (also retitled OKEB-150 as a result)
-  - K90 'Trio' and K30 'Solo' are now Blanket style arrays from a balance PoV, and are retitled as OKEB-15 and OKEB-45. They can no longer be retracted.
+  - K90 'Trio' and K30 'Solo' are now Blanket style arrays from a balance PoV, and are retitled as OKEB-45 and OKEB-15. They can no longer be retracted.
   - YF-8 Circular Solar Array is now Blanket style from a balance PoV (higher mass efficiency, lower cost, worse output/area), and is retitled as OKEB-4R with 4 kW output
-  - NIV-18 has a higher output due to its larger size, mass and cost adjusted
   - Mass, cost and unlock cost were tuned for many panels
-  - Tech location tuning for all parts
+  - Crash tolerances were normalized by type: Advanced - 8, Blanket - 5, Concentrator - 6, Shrouded - 12.
+  - Shrouded panels now have higher thermal tolerances (2000K) and Blanket panels now have smaller thermal tolerances (1000K). Other panels normalized to 1200K. 
+  - Tech location tuned for all parts
 - New panels:
   - K2-A 1x2 Advanced Photovoltaic Panels: Small Advanced 2 kW array based on MRO panels
   - K4-A 3x1 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on TDRSS Gen 1 panels
   - K20-C 1+2+1 Concentrating Photovoltaic Panels: Medium Concentrating 20 KW array based on JUICE panels
   - K40-AR 'Oar' Advanced Photovoltaic Array: Medium Advanced 40 kW sized retractable array
-  - KX-STAT Advanced Photovoltaic Truss: Single-panel version of the KX-STAT series
-  - OKEB-XX 'Starship' Blanket Photovoltaic Array: Huge Blanket XX kW panels based off the SpaceX Starship panels
+  - KX-STAT-2 Advanced Photovoltaic Truss: Single-panel version of the KX-STAT series (2kW)
+  - OKEB-25-R 'Starship' Blanket Photovoltaic Array: Small Blanket 25 kW panels based off the SpaceX Starship panels. Fully shrouded.
   - OKEB-250 'Ares' Blanket Photovoltaic Array: Huge Blanket 250 kW panels based off NASA DST concept art
   - IX-A 3x1 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on TDRSS Gen 1 panels
 
