@@ -91,7 +91,10 @@ namespace NearFutureSolar
 
             for (int i = 0; i < deployStates.Length ; i++)
             {
-                deployStates[i].speed = 1;
+        if (HighLogic.LoadedSceneIsEditor)
+            deployStates[i].speed = 10;
+          else
+          deployStates[i].speed = 1;
             }
             State = ModuleDeployablePart.DeployState.EXTENDING;
         }
@@ -104,6 +107,9 @@ namespace NearFutureSolar
 
             for (int i = 0; i < deployStates.Length ; i++)
             {
+              if (HighLogic.LoadedSceneIsEditor)
+          deployStates[i].speed = -10;
+        else
                 deployStates[i].speed = -1;
             }
             State = ModuleDeployablePart.DeployState.RETRACTING;
