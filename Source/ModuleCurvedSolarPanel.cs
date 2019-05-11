@@ -124,9 +124,9 @@ namespace NearFutureSolar
             else
                 return;
         }
-
-        // Get the state
-        public ModuleDeployablePart.DeployState State
+       
+    // Get the state
+    public ModuleDeployablePart.DeployState State
         {
             get
             {

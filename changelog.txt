@@ -46,6 +46,8 @@ v1.0.0
   - OKEB-25-R 'Starship' Blanket Photovoltaic Array: Small Blanket 25 kW panels based off the SpaceX Starship panels. Fully shrouded.
   - OKEB-250 'Ares' Blanket Photovoltaic Array: Huge Blanket 250 kW panels based off NASA DST concept art
   - IX-A 3x1 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on TDRSS Gen 1 panels
+- Curved solar panels now extend 10x faster in the VAB/SPH
+- Curved solar panels now update their symmetric counterparts when deploying/retracting in the VAB/SPH
 
 v0.8.16
 ------
