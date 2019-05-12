@@ -48,22 +48,41 @@ namespace NearFutureSolar
         public void DeployPanels()
         {
             Deploy();
+      if (HighLogic.LoadedSceneIsEditor)
+        foreach (Part p in part.symmetryCounterparts)
+      {
+        ModuleCurvedSolarPanel m = p.GetComponent<ModuleCurvedSolarPanel>();
+        m.Deploy();
+      }
 
-        }
+    }
         // Retract Panels
         [KSPEvent(guiActive = true, guiName = "Retract Panel", active = false, guiActiveEditor = true)]
         public void RetractPanels()
         {
             Retract();
+      if (HighLogic.LoadedSceneIsEditor)
+        foreach (Part p in part.symmetryCounterparts)
+            {
+              ModuleCurvedSolarPanel m = p.GetComponent<ModuleCurvedSolarPanel>();
+              m.Retract();
+            }
 
-        }
+    }
         // Toggle Panels
         [KSPEvent(guiActive = false, guiName = "Toggle Panel", active = false)]
         public void TogglePanels()
         {
 
             Toggle();
-        }
+      if (HighLogic.LoadedSceneIsEditor)
+      foreach (Part p in part.symmetryCounterparts)
+      {
+        ModuleCurvedSolarPanel m = p.GetComponent<ModuleCurvedSolarPanel>();
+        m.Toggle();
+      }
+
+    }
 
         [KSPAction("Deploy Panels")]
         public void DeployPanelsAction(KSPActionParam param)
@@ -86,24 +105,33 @@ namespace NearFutureSolar
         // Deploy Panels
         public void Deploy()
         {
-            if (!Deployable)
+      
+      if (!Deployable)
                 return;
-
-            for (int i = 0; i < deployStates.Length ; i++)
+      
+      for (int i = 0; i < deployStates.Length ; i++)
             {
-                deployStates[i].speed = 1;
+        if (HighLogic.LoadedSceneIsEditor)
+            deployStates[i].speed = 10;
+          else
+          deployStates[i].speed = 1;
             }
             State = ModuleDeployablePart.DeployState.EXTENDING;
-        }
+          
+    }
 
         // Retract Panels
         public void Retract()
         {
+            
             if (!Deployable)
                 return;
-
-            for (int i = 0; i < deployStates.Length ; i++)
+   
+      for (int i = 0; i < deployStates.Length ; i++)
             {
+              if (HighLogic.LoadedSceneIsEditor)
+          deployStates[i].speed = -10;
+        else
                 deployStates[i].speed = -1;
             }
             State = ModuleDeployablePart.DeployState.RETRACTING;
@@ -111,16 +139,17 @@ namespace NearFutureSolar
         // Toggle Panels
         public void Toggle()
         {
-            if (State == ModuleDeployablePart.DeployState.EXTENDED)
+          
+      if (State == ModuleDeployablePart.DeployState.EXTENDED)
                 Retract();
             else if (State == ModuleDeployablePart.DeployState.RETRACTED)
                 Deploy();
             else
                 return;
         }
-
-        // Get the state
-        public ModuleDeployablePart.DeployState State
+       
+    // Get the state
+    public ModuleDeployablePart.DeployState State
         {
             get
             {

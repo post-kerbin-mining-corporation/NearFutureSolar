@@ -1,0 +1,29 @@
+
+{
+  "spec_version"        : "v1.4",
+  "identifier"          : "NearFutureSolar",
+  "$kref"               : "#/ckan/spacedock/559",
+  "abstract"            : "New solar panels in a variety of sizes and types",
+  "author"              : "Nertea",
+  "license"             : "restricted",
+  "$vref"               : "#/ckan/ksp-avc",
+  "resources": {
+    "homepage": "https://forum.kerbalspaceprogram.com/index.php?/topic/155465-16x-near-future-technologies-16x-fixes-jan-21/",
+    "repository": "https://github.com/ChrisAdderley/NearFutureSolar"
+  },
+  "depends": [
+      { "name" : "NearFutureSolar-Core" }
+  ],
+  "suggests": [
+      { "name" : "CommunityTechTree" },
+      { "name" : "NearFutureConstruction" },
+      { "name" : "NearFutureElectrical" },
+      { "name" : "NearFuturePropulsion" },
+      { "name" : "NearFutureSpacecraft" }
+  ],
+  "install" : [
+      { "find" : "NearFutureSolar",
+       "install_to" : "GameData",
+       "filter" : "NearFutureSolar.dll" }
+  ]
+}

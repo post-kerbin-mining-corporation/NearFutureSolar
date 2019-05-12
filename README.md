@@ -13,7 +13,7 @@ A mod pack for Kerbal Space Program, delivering a lot of new solar panel models
 
 Bigger, better or just different solar panel models based on many real or imagined concepts
 
-* **Concentrating Solar Arrays**: Heavier arrays that deliver more power per unit mass
+* **Advanced Solar Arrays**: Heavier arrays that deliver more power per unit mass
 * **Blanket Solar Arrays**: Giant arrays that deliver tons of power
 * **Wraparaound Arrays**: Wraparaound solar arrays for 1.25, 2.5 and 3.75m footprints, including extending versions
 
@@ -21,7 +21,7 @@ Bigger, better or just different solar panel models based on many real or imagin
 
 ### Required
 These components are required for the mod to function and are bundled as part of any download:
-* [ModuleManager (3.1.3)](https://github.com/sarbian/ModuleManager)
+* [ModuleManager (4.0.2)](https://github.com/sarbian/ModuleManager)
 
 ## Installation
 
@@ -48,6 +48,7 @@ For translation instructions please see [Localization Instructions](https://gith
 * **Spanish**: fitiales
 * **German**: Three_Pounds
 * **Simplified Chinese**: DY_ZBX
+* **Italian**: fr33soul
 
 ## Licensing
 

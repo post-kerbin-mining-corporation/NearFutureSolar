@@ -29,3 +29,4 @@ There are some characters that should not be translated into another language an
 * fitiales (Spanish)
 * Three_Pounds (German)
 * DY_ZBX (Simplified Chinese)
+* fr33soul (Italian)
