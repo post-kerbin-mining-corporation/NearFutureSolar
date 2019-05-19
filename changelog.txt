@@ -2,6 +2,8 @@ v1.0.1
 ------
 - Fixed OKEB-15 and -45 being retractable
 - Fixed OKEB-150 not being retractable
+- Updated Spanish translation
+- Fixed power output of Ares panels
 
 v1.0.0
 ------
