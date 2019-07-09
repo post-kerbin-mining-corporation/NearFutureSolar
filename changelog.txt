@@ -1,3 +1,8 @@
+v1.0.3
+------
+- Fixed CTT location of small truss solar array
+- Moved truss solar arrays to Advanced Solar Tech node in CTT mode
+
 v1.0.2
 ------
 - Some fixed manufacturers (Sool3)
