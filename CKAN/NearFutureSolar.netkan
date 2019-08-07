@@ -12,7 +12,8 @@
     "repository": "https://github.com/ChrisAdderley/NearFutureSolar"
   },
   "depends": [
-      { "name" : "NearFutureSolar-Core" }
+      { "name" : "NearFutureSolar-Core" },
+      { "name" : "ModuleManager" }
   ],
   "suggests": [
       { "name" : "CommunityTechTree" },
