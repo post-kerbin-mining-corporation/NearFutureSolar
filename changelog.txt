@@ -1,3 +1,7 @@
+v1.0.4
+------
+- Updated Chinese translations (6DYZBX)
+
 v1.0.3
 ------
 - Fixed CTT location of small truss solar array
