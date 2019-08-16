@@ -1,5 +1,6 @@
 v1.0.4
 ------
+- Fixed rogue lights on Megalador and Halo panels
 - Updated Chinese translations (6DYZBX)
 
 v1.0.3
