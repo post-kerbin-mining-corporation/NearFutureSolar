@@ -1,3 +1,7 @@
+v1.0.5
+------
+- Fixed an issue with the Halo panel colliders
+
 v1.0.4
 ------
 - Fixed rogue lights on Megalador and Halo panels
