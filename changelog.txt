@@ -1,3 +1,10 @@
+v2.0.0
+------
+- KSP 1.8
+- Plugin recompiled against .NET 4.5
+- REMOVED ALL DEPRECATED OLD SOLAR PANEL PARTS
+- 
+
 v1.0.5
 ------
 - Fixed an issue with the Halo panel colliders
