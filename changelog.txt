@@ -1,9 +1,10 @@
-v2.0.0
+v1.1.0
 ------
-- KSP 1.8
+- KSP 1.8.x
 - Plugin recompiled against .NET 4.5
+- Updated bundled ModuleManager to 4.1.0
 - REMOVED ALL DEPRECATED OLD SOLAR PANEL PARTS
-- 
+- Updated MM patches to have correct pass specifications when needed
 
 v1.0.5
 ------
