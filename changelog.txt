@@ -1,3 +1,17 @@
+v1.1.0
+------
+- KSP 1.8.x
+- Plugin recompiled against .NET 4.5
+- Updated bundled ModuleManager to 4.1.0
+- REMOVED ALL DEPRECATED OLD SOLAR PANEL PARTS
+- Updated MM patches to have correct pass specifications when needed
+- Added new panel models
+  - K3x75-A 1x1 Advanced Photovoltaic Panels: Small Advanced 3.75 kW array based on MESSENGER panels. Not retractable
+  - K3-A 3x1 Advanced Photovoltaic Panels: Small Advanced 3 kW array based on Worldview-3 panels. Not retractable
+  - K4-AFR 1x2 Advanced Photovoltaic Panels: Small Advanced 4 kW array based on Worldview-4 panels. Does not track sun
+  - K10-AFR 3x1 Advanced Photovoltaic Panels: Small Advanced 10 kW array based on Hayabusa-2 panels. Does not track sun
+  - K0f7-AFR 1x1 Advanced Photovoltaic Panels: Small Advanced 0.7 kW array based on Ikonos-1 panels. Does not track sun
+
 v1.0.5
 ------
 - Fixed an issue with the Halo panel colliders
