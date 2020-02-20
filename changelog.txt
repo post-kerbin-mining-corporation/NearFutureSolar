@@ -2,11 +2,12 @@ v1.2.0
 ------
 - Marked compatible with KSP 1.9+
 - Updated bundled ModuleManager to 4.1.3
-- B9PartSwitch is now bundled
+- B9PartSwitch is now bundled and required
 - Switchable cell feature implemented
 -- All previous Advanced panels can now toggle between Basic, Advanced and Concentrator cells with different looks and performance. Advanced represents previous baseline, Concentrator increases power per unit area but weighs more, Basic decreases power per unit area, but weighs less. 
 -- All previous Blanket panels can now toggle between Basic Blanket, and Advanced Blanket cells with different looks and performance. Advanced represents previous baseline, Basic decreases power per unit area, but weighs less. 
 -- All previous Concentrator panels can now toggle between Basic, Advanced and Concentrator cells with different looks and performance. Concentrator represents previous baseline, Advanced decreases power per unit area but weighs less, Basic further decreases power per unit area, but weighs least. 
+- Some panel names were adjusted to be clearer
 - Fixed an issue where most or all normal maps in the mod had some problems
 - Fixed an issue with the Solo panel's suncatcher not extending with the rest of the model
 
