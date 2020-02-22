@@ -6,7 +6,7 @@
     "abstract"            : "This is the Near Future Solar plugin stand-alone, for adding functionality to other mods. It contains no parts and does nothing by itself.",
     "author"              : "Nertea",
     "license"             : "MIT",
-    "$vref"               : "#/ckan/ksp-avc",
+    "$vref"               : "#/ckan/ksp-avc/NearFutureSolar.version",
     "recommends": [
         { "name" : "NearFutureSolar" }
     ],
