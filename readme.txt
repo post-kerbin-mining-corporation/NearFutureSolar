@@ -1,5 +1,5 @@
 =============================
-NEAR FUTURE SOLAR PACK v1.2.0
+NEAR FUTURE SOLAR PACK v1.2.1
 =============================
 
 This pack contains many modern and fancy solar panels to use on your ships and stations.
