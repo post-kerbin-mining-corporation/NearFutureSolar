@@ -1,3 +1,7 @@
+v1.2.1
+------
+- Changed the attach node on the curved panels to behave better with surface attachemnt (sorry, this will affect craft)
+
 v1.2.0
 ------
 - Marked compatible with KSP 1.9+
