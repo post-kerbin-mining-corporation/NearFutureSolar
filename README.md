@@ -48,7 +48,7 @@ For translation instructions please see [Localization Instructions](https://gith
 
 * **Spanish**: fitiales
 * **German**: Three_Pounds
-* **Simplified Chinese**: DY_ZBX
+* **Simplified Chinese**: DY_ZBX, tinygrox
 * **Italian**: fr33soul
 * **Russian**: Sooll3
 
