@@ -13,6 +13,7 @@
   },
   "depends": [
       { "name" : "NearFutureSolar-Core" },
+      { "name" : "B9PartSwitch" },
       { "name" : "ModuleManager" }
   ],
   "suggests": [
