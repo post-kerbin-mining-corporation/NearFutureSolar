@@ -51,6 +51,7 @@ For translation instructions please see [Localization Instructions](https://gith
 * **Simplified Chinese**: DY_ZBX, tinygrox
 * **Italian**: fr33soul
 * **Russian**: Sooll3
+* **Portugese:** Rib3iroJr
 
 ## Licensing
 
