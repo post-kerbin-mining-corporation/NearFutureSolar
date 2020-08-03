@@ -1,5 +1,5 @@
 =============================
-NEAR FUTURE SOLAR PACK v1.2.2
+NEAR FUTURE SOLAR PACK v1.2.3
 =============================
 
 This pack contains many modern and fancy solar panels to use on your ships and stations.
@@ -9,8 +9,8 @@ DEPENDENCIES
 ============
 
 Required:
-- ModuleManager (4.1.3)
-- B9PartSwitch (2.16.0)
+- ModuleManager (4.1.4)
+- B9PartSwitch (2.17.0)
 
 Optional
 - Community Tech Tree (v2.2+)

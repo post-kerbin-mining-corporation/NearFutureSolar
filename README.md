@@ -21,8 +21,8 @@ Bigger, better or just different solar panel models based on many real or imagin
 
 ### Required
 These components are required for the mod to function and are bundled as part of any download:
-* [ModuleManager (4.1.3)](https://github.com/sarbian/ModuleManager)
-* [B9PartSwitch (2.13.0)](https://github.com/blowfishpro/B9PartSwitch)
+* [ModuleManager (4.1.4)](https://github.com/sarbian/ModuleManager)
+* [B9PartSwitch (2.17.0)](https://github.com/blowfishpro/B9PartSwitch)
 
 ## Installation
 
@@ -51,6 +51,7 @@ For translation instructions please see [Localization Instructions](https://gith
 * **Simplified Chinese**: DY_ZBX, tinygrox
 * **Italian**: fr33soul
 * **Russian**: Sooll3
+* **Portugese:** Rib3iroJr
 
 ## Licensing
 
