@@ -4,7 +4,7 @@
   "identifier"          : "NearFutureSolar",
   "$kref"               : "#/ckan/spacedock/559",
   "abstract"            : "New solar panels in a variety of sizes and types",
-  "author"              : "Chris Adderley (Nertea)",
+  "author"              : "Nertea (Chris Adderley)",
   "license"             : "restricted",
   "$vref"               : "#/ckan/ksp-avc",
   "resources": {

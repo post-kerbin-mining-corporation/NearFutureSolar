@@ -4,7 +4,7 @@
     "$kref"               : "#/ckan/spacedock/559",
     "name"                : "Near Future Solar Core",
     "abstract"            : "This is the Near Future Solar plugin stand-alone, for adding functionality to other mods. It contains no parts and does nothing by itself.",
-    "author"              : "Nertea",
+    "author"              : "Nertea (Chris Adderley)",
     "license"             : "MIT",
     "$vref"               : "#/ckan/ksp-avc/NearFutureSolar.version",
     "recommends": [
