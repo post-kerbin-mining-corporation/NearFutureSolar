@@ -31,3 +31,4 @@ There are some characters that should not be translated into another language an
 * DY_ZBX (Simplified Chinese)
 * fr33soul (Italian)
 * Sooll3 (Russian)
+* ValiusV (French)
