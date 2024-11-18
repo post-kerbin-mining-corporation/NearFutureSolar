@@ -39,6 +39,7 @@ This mod includes localization support, and includes translations for
 - German (KSP forum user Three_Pounds)
 - Italian (fr33soul)
 - Russian (Sooll3)
+- Japanese (Mikeore)
 
 =========
 LICENSING

@@ -32,3 +32,4 @@ There are some characters that should not be translated into another language an
 * fr33soul (Italian)
 * Sooll3 (Russian)
 * ValiusV (French)
+* Mikeore (Japanese)
